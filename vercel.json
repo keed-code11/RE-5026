@@ -1,0 +1,12 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "installCommand": "npm ci",
+  "buildCommand": "npm run build:node",
+  "outputDirectory": "packages/web/dist",
+  "routes": [
+    { "src": "/api/(.*)", "dest": "/api/handler?__re_path=$1" },
+    { "handle": "filesystem" },
+    { "src": "/.*", "dest": "/index.html" }
+  ]
+}

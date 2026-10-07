@@ -20,7 +20,10 @@
     "db:generate": "turbo db:generate",
     "db:migrate": "turbo db:migrate",
     "db:push": "turbo db:push",
-    "internal:kill-port": "lsof -t -i :$(bun --print \"require('./__ports.cjs').website\") | xargs kill -9"
+    "internal:kill-port": "lsof -t -i :$(bun --print \"require('./__ports.cjs').website\") | xargs kill -9",
+    "dev:node": "npm run dev --workspace=@template/web",
+    "build:node": "npm run build --workspace=@template/web",
+    "start:node": "npm run start:node --workspace=@template/web"
   },
   "devDependencies": {
     "@runablehq/runkit": "0.1.1",
@@ -35,5 +38,9 @@
     "@libsql/client": "^0.17.2",
     "cloudflare": "^5.2.0",
     "pm2": "^7.0.1"
-  }
+  },
+  "engines": {
+    "node": "24.x"
+  },
+  "type": "module"
 }
